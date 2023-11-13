@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+// 注意，要先安装 node 环境
+const commitRE = /^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z \-]+\))?!?: .+$/;
+const fs = require('fs');
+// process.argv[1] = '.githooks\\commit-msg' process.argv[2] = '.git/COMMIT_EDITMSG'
+const msg = fs.readFileSync(process.argv[2], 'utf-8').trim();
+console.log('提交消息为 \x1B[36m%s\x1B[0m', msg);
+if (!commitRE.test(msg)) {
+  console.error('\x1B[31mThe commit message does not meet the Conventional Commit standard\x1B[0m');
+  console.error('An example of a valid message is: ');
+  console.error('  feat(login): add the \'remember me\' button');
+  console.error('More details at: https://www.conventionalcommits.org/en/v1.0.0/#summary');
+  process.exit(1);
+}
+console.log('\x1B[36m消息格式校验通过\x1B[0m');
