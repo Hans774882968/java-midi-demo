@@ -21,10 +21,10 @@ public class 上学歌Demo {
         player.setSequence(sequence);
         Track track = sequence.createTrack();
 
-        MyNoteImpl myNoteIMPL = new MyNoteImpl(MyNote.Major.C);
+        MyNoteImpl myNoteImpl = new MyNoteImpl(MyNote.Major.C);
 
-        上学歌left(track, channel, myNoteIMPL, volume, beat, length);
-        上学歌right(track, channel, myNoteIMPL, volume, beat, length);
+        上学歌left(track, channel, myNoteImpl, volume, beat, length);
+        上学歌right(track, channel, myNoteImpl, volume, beat, length);
 
         player.open();
         Thread.sleep(100);
@@ -80,7 +80,7 @@ public class 上学歌Demo {
             tick += addNote(track, channel, myNoteImpl.getSol(-1), volume, tick, beat / 2, tick + length);
 
             // 背上小书
-            tick += addNote(track, channel, myNoteImpl.getSol(-1), volume, tick, beat / 2, tick + length);
+            tick += addNote(track, channel, myNoteImpl.getSol(-2), volume, tick, beat / 2, tick + length);
             tick += addNote(track, channel, myNoteImpl.getRe(-1), volume, tick, beat / 2, tick + length);
             tick += addNote(track, channel, myNoteImpl.getSi(-1), volume, tick, beat / 2, tick + length);
             tick += addNote(track, channel, myNoteImpl.getRe(-1), volume, tick, beat / 2, tick + length);
@@ -119,12 +119,14 @@ public class 上学歌Demo {
             // 小鸟说
             tick += addNote(track, channel, myNoteImpl.getLa(0), volume, tick, beat / 2, tick + length);
             tick += addNote(track, channel, myNoteImpl.getLa(0), volume, tick, beat / 2, tick + length);
-            tick += addNote(track, channel, myNoteImpl.getDo(1), volume, tick, beat, tick + length);
+            tick += addNote(track, channel, myNoteImpl.getDo(1), volume, tick, beat * 3 / 4, tick + length);
+            tick += addNote(track, channel, 0, 0, tick, beat / 4, tick + length);
 
             // 早早早
             tick += addNote(track, channel, myNoteImpl.getSol(0), volume, tick, beat / 2, tick + length);
             tick += addNote(track, channel, myNoteImpl.getLa(0), volume, tick, beat / 2, tick + length);
-            tick += addNote(track, channel, myNoteImpl.getSol(0), volume, tick, beat, tick + length);
+            tick += addNote(track, channel, myNoteImpl.getSol(0), volume, tick, beat * 3 / 4, tick + length);
+            tick += addNote(track, channel, 0, 0, tick, beat / 4, tick + length);
 
             // 你为什么
             tick += addNote(track, channel, myNoteImpl.getLa(0), volume, tick, beat / 2, tick + length);

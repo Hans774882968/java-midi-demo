@@ -52,22 +52,22 @@ public class 菊次郎的夏天Demo {
         player.setSequence(sequence);
         Track track = sequence.createTrack();
 
-        MyNoteImpl myNoteIMPL = new MyNoteImpl(MyNote.Major.D);
+        MyNoteImpl myNoteImpl = new MyNoteImpl(MyNote.Major.D);
 
         if (playLeft) {
             菊次郎的夏天left(
-                    track, channel, myNoteIMPL, volume, beat,
+                    track, channel, myNoteImpl, volume, beat,
                     length, startPlayIndex, endPlayIndex);
         }
         if (playRight) {
             菊次郎的夏天right(
-                    track, channel, myNoteIMPL, volume, beat,
+                    track, channel, myNoteImpl, volume, beat,
                     length, startPlayIndex, endPlayIndex);
             菊次郎的夏天right2(
-                    track, channel, myNoteIMPL, volume, beat,
+                    track, channel, myNoteImpl, volume, beat,
                     length, startPlayIndex, endPlayIndex);
             菊次郎的夏天right3(
-                    track, channel, myNoteIMPL, volume, beat,
+                    track, channel, myNoteImpl, volume, beat,
                     length, startPlayIndex, endPlayIndex);
         }
 
@@ -337,10 +337,10 @@ public class 菊次郎的夏天Demo {
                 },
                 {
                         new AddNoteParams("11-1", myNoteImpl.getFaUp(0), volume, beat / 2, length),
-                        new AddNoteParams("11-1", myNoteImpl.getFa(0), volume, beat / 4, length),
-                        new AddNoteParams("11-1", myNoteImpl.getFa(0), volume, beat / 4, length),
-                        new AddNoteParams("11-1", myNoteImpl.getFa(0), 0, beat / 2, length),
-                        new AddNoteParams("11-1", myNoteImpl.getFa(0), volume, beat / 2, length),
+                        new AddNoteParams("11-1", myNoteImpl.getFaUp(0), volume, beat / 4, length),
+                        new AddNoteParams("11-1", myNoteImpl.getFaUp(0), volume, beat / 4, length),
+                        new AddNoteParams("11-1", myNoteImpl.getFaUp(0), 0, beat / 2, length),
+                        new AddNoteParams("11-1", myNoteImpl.getFaUp(0), volume, beat / 2, length),
 
                         new AddNoteParams("11-2", myNoteImpl.getLa(0), volume, beat / 2, length),
                         new AddNoteParams("11-2", myNoteImpl.getLa(1), volume, beat / 2, length),
